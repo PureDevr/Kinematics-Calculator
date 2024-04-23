@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Kinematics Calculator</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/kinematic.js"></script>
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- <script>
+        alert("Page has been loaded successfully.")
+    </script> -->
+</head>
+
+<body>
+    <div class="banner">
+        <h1>Kinematics Calculator</h1>
+    </div>
+    <div class="content">
+        <div class="left-side">
+            <p>
+                Welcome to Kinematics Calculator.<br><br>
+
+                This is a simple tool that allows you to calculate 1 variable with at least 3 parameters given.<br><br>
+
+                The calculator will tell you the answer round to 5 decimal places, and which equation is used.<br><br>
+
+                Both linear and rotational kinematics apply, only the units are different.<br><br>
+
+                Toggling between linear and rotational simply changes the base unit between meter and radian.<br><br>
+
+                Just a friendly reminder, you are <b>not advised</b> to use this calculator until you really understand
+                and remember the functions.<br><br>
+                This is just a tool for your convenience when doing practices at home, verifying answers, etc.<br><br>
+
+                Remember, you do not have access to this calculator during the AP Exam.<br><br><br><br>
+
+                May you score a 5 on your AP Exam.
+            </p>
+        </div>
+        <div class="right-side">
+            <ul>
+                <li><label>Time</label><input class="field" type="number" id="time" name="time" placeholder="(s)"></li>
+                <li><label>Displacement</label><input class="field" type="number" id="disp" name="displacement"
+                        placeholder="(m)">
+                </li>
+                <li><label>Initial velocity</label><input class="field" type="number" id="iniV" name="initialVelocity"
+                        placeholder="(m/s)"></li>
+                <li><label>Final Velocity</label><input class="field" type="number" id="finV" name="finalVelocity"
+                        placeholder="(m/s)"></li>
+                <li><label>Acceleration</label><input class="field" type="number" id="accel" name="acceleration"
+                        placeholder="(m/s²)">
+                </li>
+            </ul>
+            <div id="selections">
+                <select id="reqAns">
+                    <option value="0">Time elapsed</option>
+                    <option value="1">Displacement</option>
+                    <option value="2">Initial Velocity</option>
+                    <option value="3">Final Velocity</option>
+                    <option value="4">Acceleration</option>
+                </select>
+                <button type="button" onclick="main()">Calculate</button>
+                <label>Linear</label>
+                <input type="checkbox" id="linear" onchange="toggle('linear')">
+                <label>Rotational</label>
+                <input type="checkbox" id="rotational" onchange="toggle('rotational')">
+                <script>
+                    pHToggle();
+                </script>
+            </div>
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+</body>
